@@ -28,3 +28,4 @@ echo "Une fois le mot de passe renseigné, choississez INSTALLER LES PLUGINS SUG
 echo "Après l'installation des plugins, créer votre propre utilisateur de jenkins"
 
 echo "Dans la page de CONFIGURATION DE L'INSTANCE, changer l'url si celui-ci n'est pas correct"
+
