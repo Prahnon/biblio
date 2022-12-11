@@ -27,6 +27,13 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+    #On ajoute l'étape des test avant la génération du package
+    - name: Check test
+      #Cette commande construit le projet, exécute tous les cas de test et effectue toute vérification des résultats des tests d'intégration pour garantir le respect des critères de qualité.
+      run: mvn verify
+    - name: Launch the projetc maven silent
+      #Exécute la construction maven en mode silencieux, seuls les résultats des cas de test et les erreurs sont affichés.
+      run: mvn -q package
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
