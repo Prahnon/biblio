@@ -32,6 +32,9 @@ jobs:
       #Cette commande construit le projet, exécute tous les cas de test et effectue toute vérification des résultats des tests d'intégration pour garantir le respect des critères de qualité.
       run: mvn test
       
+    - name: Verfification
+      run: mvn verify
+      
     #J'ajoute une nouvelle étape qui affichera les erreurs et les résultats des cas de test.
     - name: Launch the projetc maven silent
       #Exécute la construction maven en mode silencieux, seuls les résultats des cas de test et les erreurs sont affichés.
