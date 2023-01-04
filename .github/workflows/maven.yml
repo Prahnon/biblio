@@ -51,6 +51,9 @@ jobs:
     - name: Génération HTML 
       run: sh make_html.sh target/biblio-0.1.jar
       
+    #Ajout de l'étape Github Pages pour recopier le dossier wwwroot dans une branche
     - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4.4.1 /biblio/wwwroot
+      uses: JamesIves/github-pages-deploy-action@v4.4.1
+      with:
+        folder: /wwwroot
 
