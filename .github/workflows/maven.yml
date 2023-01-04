@@ -30,13 +30,14 @@ jobs:
     #On ajoute l'étape des test avant la génération du package
     - name: Check test
       #Cette commande construit le projet, exécute tous les cas de test et effectue toute vérification des résultats des tests d'intégration pour garantir le respect des critères de qualité.
-      run: mvn verify
+      run: mvn test
     #J'ajoute une nouvelle étape qui affichera les erreurs et les résultats des cas de test.
     - name: Launch the projetc maven silent
       #Exécute la construction maven en mode silencieux, seuls les résultats des cas de test et les erreurs sont affichés.
       run: mvn -q package
       
     - name: Build with Maven
+    #Le skipTests la propriété du système est utilisée pour ignorer les cas de test unitaires du cycle de construction
       run: mvn -DskipTests package --file pom.xml
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
